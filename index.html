@@ -2,41 +2,56 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Mini Blokes</title>
+  <title>Blokets</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="app">
-    <h1>🎁 Mini Blokes</h1>
-    
-    <div id="loginScreen">
-      <input id="usernameInput" placeholder="Enter a username"/>
-      <button id="loginBtn">Play</button>
-    </div>
 
-    <div id="gameScreen" class="hidden">
-      <h2>Welcome, <span id="playerName"></span>!</h2>
-      <p>Tokens: <span id="tokenCount">0</span></p>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Bloket</h2>
+      <ul>
+        <li>🏠 Dashboard</li>
+        <li>📊 Leaderboard</li>
+        <li>🎁 Packs</li>
+        <li>👥 Friends</li>
+        <li>⚙ Settings</li>
+      </ul>
+    </aside>
 
-      <div class="section">
-        <h3>Daily Wheel</h3>
-        <button id="spinBtn">🎡 Spin</button>
+    <!-- Main Content -->
+    <main class="main">
+      <header class="user-header">
+        <div class="user-card">
+          <h2 id="username">Guest</h2>
+          <p>Tokens: <span id="tokenCount">0</span></p>
+        </div>
+      </header>
+
+      <section class="stats">
+        <div class="stat-box">Blokes: <span id="blokeCount">0</span></div>
+        <div class="stat-box">Packs Opened: <span id="packsOpened">0</span></div>
+        <div class="stat-box">Last Spin: <span id="lastSpin">Never</span></div>
+      </section>
+
+      <section class="actions">
+        <h3>🎡 Daily Spin</h3>
+        <button id="spinBtn">Spin for Tokens</button>
         <p id="spinResult"></p>
-      </div>
 
-      <div class="section">
-        <h3>Packs</h3>
-        <button id="openPackBtn">Open Pack (cost 50 tokens)</button>
+        <h3>🎁 Open Pack</h3>
+        <button id="openPackBtn">Open (50 tokens)</button>
         <p id="packResult"></p>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="inventory">
         <h3>Your Blokes</h3>
-        <ul id="blokeList"></ul>
-      </div>
-    </div>
-  </div>
+        <div id="blokeList" class="bloke-grid"></div>
+      </section>
+    </main>
 
+  </div>
   <script src="app.js"></script>
 </body>
 </html>
